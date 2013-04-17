@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
   def index
-    render text: "For one night"
+    @messages = Message.latest
   end
 end
