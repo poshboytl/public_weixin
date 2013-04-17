@@ -7,7 +7,7 @@ class Voting
 
   def votable?(request)
     redis do |conn|
-      conn.sismember key, request.ip
+      !conn.sismember(key, request.ip)
     end
   end
 
@@ -18,6 +18,16 @@ class Voting
       end
     else
       false
+    end
+  end
+
+  def unvote(request)
+    if votable?(request)
+      false
+    else
+      redis do |conn|
+        conn.srem key, request.ip
+      end
     end
   end
 

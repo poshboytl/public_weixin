@@ -6,4 +6,8 @@ class Vote < ActiveRecord::Base
   def incr!
     increment(:count)
   end
+
+  def decr!
+    decrement(:count)
+  end
 end

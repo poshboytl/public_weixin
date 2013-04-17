@@ -13,4 +13,12 @@ class VotingService
       vote.incr!
     end
   end
+
+  def unvote!
+    voting = Voting.new(message.bizid, message.msgid)
+    if voting.unvote
+      vote = Vote.find_or_create_from_message(message)
+      vote.decr!
+    end
+  end
 end

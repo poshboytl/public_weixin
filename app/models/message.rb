@@ -22,6 +22,7 @@ class Message < ActiveRecord::Base
   belongs_to :info, class_name: 'Bizinfo', primary_key: 'bizid', foreign_key: 'bizid'
 
   scope :recent, order('updated_at DESC')
+  scope :by_vote, joins("LEFT JOIN votes on message.bizid = votes.bizid AND message.msgid = votes.msgid").order("votes.count DESC")
 
   def self.from_param(bizid, msgid)
     where(bizid: bizid, msgid: msgid).first
