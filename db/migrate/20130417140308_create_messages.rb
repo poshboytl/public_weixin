@@ -2,7 +2,7 @@ class CreateMessages < ActiveRecord::Migration
   def change
     create_table :message do |t|
       t.string :bizid, limit: 32
-      t.bigint :msgid,
+      t.bigint :msgid
       t.string :url
       t.string :title
       t.text :content
