@@ -1,6 +1,6 @@
 <div class="main">
   <h1>Top Faved Messages</h1>
-  
+
   <section id="messages">
   <% @messages.each do |message| %>
     <article class="item">
@@ -17,9 +17,9 @@
 </div>
 
 <script type="text/javascript">
-  $(function(){
+  $('body').imagesLoaded(function(){
     $('#messages').masonry({
-      itemSelector : '.item'`,
+      itemSelector : '.item',
       columnWidth : 320
     });
   });
