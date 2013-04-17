@@ -21,4 +21,9 @@ class VotingService
       vote.decr!
     end
   end
+
+  def voted?
+    voting = Voting.new(message.bizid, message.msgid)
+    !voting.votable?
+  end
 end
