@@ -19,14 +19,11 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'bootstrap-sass'
 gem 'jquery-rails'
+gem 'kaminari'
 
-group :development, :test do
+group :development do
   gem "debugger"
-  gem "rspec-rails"
-  gem "factory_girl_rails"
-  gem "shoulda-matchers"
-  gem "database_cleaner"
   gem "pry-rails"
-  gem "webmock", "~> 1.9.3"
 end
