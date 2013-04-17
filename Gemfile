@@ -18,12 +18,7 @@ end
 
 gem 'jquery-rails'
 
-group :development, :test do
+group :development do
   gem "debugger"
-  gem "rspec-rails"
-  gem "factory_girl_rails"
-  gem "shoulda-matchers"
-  gem "database_cleaner"
   gem "pry-rails"
-  gem "webmock", "~> 1.9.3"
 end
