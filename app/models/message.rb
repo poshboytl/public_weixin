@@ -17,8 +17,9 @@
 
 class Message < ActiveRecord::Base
   set_table_name "message"
+  paginates_per 60
 
   belongs_to :info, class_name: 'Bizinfo', primary_key: 'bizid', foreign_key: 'bizid'
 
-  scope :latest, order('updated_at DESC')
+  scope :recent, order('updated_at DESC')
 end

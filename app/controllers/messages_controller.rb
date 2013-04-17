@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
   def index
-    @messages = Message.latest
+    @messages = Message.recent.page(params[:page])
   end
 end
