@@ -1,3 +1,46 @@
-// Place all the styles related to the messages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#messages {
+  .item {
+    width: 280px;
+    margin: 10px;
+    padding: 10px;
+    float: left;
+    background-color: #fff;
+    @include box-shadow(0 1px 3px rgba(0,0,0,.3));
+    h2 {
+      font-size: 16px;
+      color: #555;
+    }
+    .cnt { padding: 10px 0; }
+    .more {
+      border-top: 1px solid #b9cad2;
+      padding-top: 5px;
+    }
+  }
+}
+
+/**** Transitions ****/
+
+.masonry,
+.masonry .masonry-brick {
+  -webkit-transition-duration: 0.7s;
+     -moz-transition-duration: 0.7s;
+      -ms-transition-duration: 0.7s;
+       -o-transition-duration: 0.7s;
+          transition-duration: 0.7s;
+}
+
+.masonry {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.masonry .masonry-brick {
+  -webkit-transition-property: left, right, top;
+     -moz-transition-property: left, right, top;
+      -ms-transition-property: left, right, top;
+       -o-transition-property: left, right, top;
+          transition-property: left, right, top;
+}

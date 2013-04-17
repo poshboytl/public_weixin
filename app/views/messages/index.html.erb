@@ -1,14 +1,26 @@
-<div class="container clearfix">
+<div class="main">
   <h1>Top Faved Messages</h1>
-
+  
+  <section id="messages">
   <% @messages.each do |message| %>
-  <section>
-    <h2><%= message.title %></h2>
-    <%= image_tag message.images %>
-    <div class="cnt">
-      <%= message.content %>
-    </div>
-  </sectio>
+    <article class="item">
+      <h2><%= message.title %></h2>
+      <%= image_tag message.images %>
+      <div class="cnt">
+        <%= truncate(message.content, length: 120) %>
+      </div>
+      <p class="more"><%= link_to "阅读全文", "#" %></p>
+    </article>
   <% end %>
+  </section>
 
 </div>
+
+<script type="text/javascript">
+  $(function(){
+    $('#messages').masonry({
+      itemSelector : '.item'`,
+      columnWidth : 320
+    });
+  });
+</script>
