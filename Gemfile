@@ -4,6 +4,9 @@ gem 'rails', '3.2.13'
 
 gem 'mysql2'
 
+gem "redis", :git => "git://github.com/redis/redis-rb.git"
+gem "hiredis", '~> 0.4.5'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
