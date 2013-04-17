@@ -1,9 +1,14 @@
 <div class="container clearfix">
   <h1>Top Faved Messages</h1>
+
+  <% @messages.each do |message| %>
   <section>
-    <h2>Message title</h2>
+    <h2><%= message.title %></h2>
+    <%= image_tag message.images %>
     <div class="cnt">
-      Message description
+      <%= message.content %>
     </div>
   </sectio>
+  <% end %>
+
 </div>
