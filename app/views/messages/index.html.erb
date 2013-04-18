@@ -12,7 +12,7 @@
       <div class="cnt">
         <%= truncate(message.content, length: 120) %>
       </div>
-      <p class="more"><%= link_to "阅读全文", "#" %></p>
+      <p class="more"><a href="#" class="like"><i class="icon-heart"></i> </a> <%= link_to "阅读全文", "#" %></p>
     </article>
   <% end %>
   </section>
