@@ -1,5 +1,8 @@
-<div class="main">
-  <h1>Top Faved Messages</h1>
+<div class="main wrapper">
+  <div class="filter btn-group">
+    <button class="btn active">最新</button>
+    <button class="btn">最受欢迎</button>
+  </div>
   
   <section id="messages">
   <% @messages.each do |message| %>
@@ -17,10 +20,12 @@
 </div>
 
 <script type="text/javascript">
-  $(function(){
-    $('#messages').masonry({
-      itemSelector : '.item'`,
-      columnWidth : 320
+  var $container = $('#messages');
+
+  $container.imagesLoaded( function(){
+    $container.masonry({
+      itemSelector : '.item',
+      gutterWidth : 20
     });
   });
 </script>

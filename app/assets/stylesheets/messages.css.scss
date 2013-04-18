@@ -1,13 +1,15 @@
 #messages {
+  margin: 0 auto;
   .item {
-    width: 280px;
-    margin: 10px;
+    width: $cardWidth - 40;
+    margin-bottom: 20px;
     padding: 10px;
     float: left;
     background-color: #fff;
     @include box-shadow(0 1px 3px rgba(0,0,0,.3));
     h2 {
       font-size: 16px;
+      line-height: 1.5em;
       color: #555;
     }
     .cnt { padding: 10px 0; }
@@ -20,8 +22,8 @@
 
 /**** Transitions ****/
 
-.masonry,
-.masonry .masonry-brick {
+#messages,
+#messages .item {
   -webkit-transition-duration: 0.7s;
      -moz-transition-duration: 0.7s;
       -ms-transition-duration: 0.7s;
@@ -29,7 +31,7 @@
           transition-duration: 0.7s;
 }
 
-.masonry {
+#messages {
   -webkit-transition-property: height, width;
      -moz-transition-property: height, width;
       -ms-transition-property: height, width;
@@ -37,7 +39,7 @@
           transition-property: height, width;
 }
 
-.masonry .masonry-brick {
+#messages .item {
   -webkit-transition-property: left, right, top;
      -moz-transition-property: left, right, top;
       -ms-transition-property: left, right, top;

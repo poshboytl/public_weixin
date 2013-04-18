@@ -1,7 +1,48 @@
 body {
   background-color: #f2f2f2;
+  min-width: 780px;
 }  
-.main {
+.wrapper {
+  margin-right: auto;
+  margin-left: auto;
+}
+.main { 
   margin: 50px auto;
-  padding: 0 20px;
+  .filter { margin: 20px 0; }
+}
+
+@media (min-width: 780px) {
+  .wrapper {
+    width: $cardWidth*3;
+  }
+}
+
+@media (min-width: 1040px) {
+  .wrapper {
+    width: $cardWidth*4;
+  }
+}
+
+@media (min-width: 1300px) {
+  .wrapper {
+    width: $cardWidth*5;
+  }
+}
+
+@media (min-width: 1560px) {
+  .wrapper {
+    width: $cardWidth*6;
+  }
+}
+
+@media (min-width: 1820px) {
+  .wrapper {
+    width: $cardWidth*7;
+  }
+}
+
+@media (min-width: 2080px) {
+  .wrapper {
+    width: $cardWidth*8;
+  }
 }
