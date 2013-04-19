@@ -4,6 +4,7 @@ gem 'rails', '3.2.13'
 
 gem 'mysql2'
 
+gem "connection_pool"
 gem "redis", :git => "git://github.com/redis/redis-rb.git"
 gem "hiredis", '~> 0.4.5'
 

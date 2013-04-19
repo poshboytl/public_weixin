@@ -7,7 +7,7 @@ class MessagePresenter
     @message = message
   end
 
-  delegate :title, :images, :content, to: :message
+  delegate :title, :images, :content, :bizid, :msgid, to: :message
 
   def voted?
     service = VotingService.new(request, message.bizid, message.msgid)

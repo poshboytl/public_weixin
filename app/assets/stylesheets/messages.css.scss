@@ -16,11 +16,19 @@
     .more {
       border-top: 1px solid #b9cad2;
       padding-top: 8px;
-      .like { 
+      .like {
         float: right;
         color: #ddd;
         text-decoration: none;
-        &:hover, &.liked { color: red; }
+        &:hover { color: red; }
+      }
+      .liked {
+        float: right;
+        color: red;
+        text-decoration: none;
+        &:hover {
+          color: #ddd;
+        }
       }
     }
   }

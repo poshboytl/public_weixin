@@ -1,5 +1,5 @@
 class VotingService
-  attr_reader :request, message
+  attr_reader :request, :message
 
   def initialize(request, bizid, msgid)
     @request = request
@@ -8,7 +8,7 @@ class VotingService
 
   def vote!
     voting = Voting.new(message.bizid, message.msgid)
-    if voting.vote
+    if voting.vote(request)
       vote = Vote.find_or_create_from_message(message)
       vote.incr!
     end
@@ -16,7 +16,7 @@ class VotingService
 
   def unvote!
     voting = Voting.new(message.bizid, message.msgid)
-    if voting.unvote
+    if voting.unvote(request)
       vote = Vote.find_or_create_from_message(message)
       vote.decr!
     end
@@ -24,6 +24,6 @@ class VotingService
 
   def voted?
     voting = Voting.new(message.bizid, message.msgid)
-    !voting.votable?
+    !voting.votable?(request)
   end
 end

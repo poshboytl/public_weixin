@@ -1,9 +1,9 @@
 <div class="main wrapper">
   <div class="filter btn-group">
-    <button class="btn active">最新</button>
-    <button class="btn">最受欢迎</button>
+    <button class="btn <%= params[:by_hot] ? '' : 'active' %>"><a href="/">最新</a></button>
+    <button class="btn <%= params[:by_hot] ? 'active' : '' %>"><a href="/?by_hot=true">最受欢迎</a></button>
   </div>
-  
+
   <section id="messages">
   <% @messages.each do |message| %>
     <article class="item">
@@ -12,7 +12,10 @@
       <div class="cnt">
         <%= truncate(message.content, length: 120) %>
       </div>
-      <p class="more"><a href="#" class="like"><i class="icon-heart"></i> </a> <%= link_to "阅读全文", "#" %></p>
+      <p class="more">
+        <%= heart_tag message %>
+        <%= link_to "阅读全文", "#" %>
+      </p>
     </article>
   <% end %>
   </section>
