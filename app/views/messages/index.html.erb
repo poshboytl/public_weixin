@@ -14,7 +14,7 @@
       </div>
       <p class="more">
         <%= heart_tag message %>
-        <%= link_to "阅读全文", "#" %>
+        <%= link_to "阅读全文", message.url, target: '_blank' %>
       </p>
     </article>
   <% end %>
